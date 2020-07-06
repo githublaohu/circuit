@@ -1,23 +1,30 @@
-/*
-* frxs Inc.  湖南兴盛优选电子商务有限公司.
-* Copyright (c) 2017-2019. All Rights Reserved.
-*/
 package com.lamp.circuit.sms.manufacturer.agreement;
+
+import com.lamp.circuit.sms.manufacturer.agreement.message.CloseConnectRequest;
+import com.lamp.circuit.sms.manufacturer.agreement.message.CloseConnectResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.ConnentRequest;
+import com.lamp.circuit.sms.manufacturer.agreement.message.ConnentResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.DeleteSmsRequest;
+import com.lamp.circuit.sms.manufacturer.agreement.message.DeleteSmsResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.HeartbeatRequest;
+import com.lamp.circuit.sms.manufacturer.agreement.message.HeartbeatResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.QuerySmsRequest;
+import com.lamp.circuit.sms.manufacturer.agreement.message.QuerySmsResponse;
 
 public interface Agreement {
 
     // 在netty handler 连接成功调用
-    void connent();
+    ConnentResponse connent(ConnentRequest connentRequest );
     
     // 在netty handler 心跳
-    void heartbeat();
+    HeartbeatResponse heartbeat(HeartbeatRequest heartbeatRequest);
     
     // 下面都在netty handler 写入方法
-    void closeConnect();
+    CloseConnectResponse closeConnect(CloseConnectRequest closeConnectRequest);
     
     void sendSms();
     
-    void querySms();
+    QuerySmsResponse querySms(QuerySmsRequest querySmsRequest);
     
-    void deleteSms();
+    DeleteSmsResponse deleteSms(DeleteSmsRequest deleteSmsRequest  );
 }
