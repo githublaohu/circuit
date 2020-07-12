@@ -8,5 +8,6 @@
   <modules>
     <module>circuit-api</module>
     <module>circuit-sms-manufacturer</module>
+    <module>circuit-sms-cloud</module>
   </modules>
 </project>
