@@ -1,23 +1,25 @@
-/*
-* frxs Inc.  湖南兴盛优选电子商务有限公司.
-* Copyright (c) 2017-2019. All Rights Reserved.
-*/
 package com.lamp.circuit.sms.manufacturer.agreement;
+
+import com.lamp.circuit.sms.manufacturer.agreement.message.CloseConnectResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.ConnentResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.DeleteSmsResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.HeartbeatResponse;
+import com.lamp.circuit.sms.manufacturer.agreement.message.QuerySmsResponse;
 
 public interface AgreementReturn {
 
     // 在netty handler 连接成功调用
-    void connent();
+    void connent(ConnentResponse connentResponse);
     
     // 在netty handler 心跳
-    void heartbeat();
+    void heartbeat(HeartbeatResponse heartbeatResponse);
     
     // 下面都在netty handler 写入方法
-    void closeConnect();
+    void closeConnect(CloseConnectResponse closeConnectResponse);
     
     void sendSms();
     
-    void querySms();
+    void querySms(QuerySmsResponse querySmsResponse);
     
-    void deleteSms();
+    void deleteSms(DeleteSmsResponse deleteSmsResponse);
 }

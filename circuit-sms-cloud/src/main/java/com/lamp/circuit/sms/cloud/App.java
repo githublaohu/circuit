@@ -1,4 +1,4 @@
-package com.lamp.circuit.api;
+package com.lamp.circuit.sms.cloud;
 
 /**
  * Hello world!
