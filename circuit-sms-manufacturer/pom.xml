@@ -13,7 +13,7 @@
     <name>circuit-sms-manufacturer</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <netty.version>4.1.29.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <fastjson.version>1.2.61</fastjson.version>
     </properties>
     <dependencies>
